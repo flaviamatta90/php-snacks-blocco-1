@@ -35,6 +35,19 @@ if(!empty($_GET["email"])){
 }
 // /email
 
+// age
+if(!empty($_GET["age"])){
+  $age = $_GET["age"];
+  if(is_numeric($age)){
+    $messaggio = "Accesso riuscito";
+  }else {
+    $messaggio = "Accesso negato";
+  }
+}else{
+  $messaggio = "Non hai scritto un numero";
+}
+// /age
+
  ?>
 
 <!DOCTYPE html>
