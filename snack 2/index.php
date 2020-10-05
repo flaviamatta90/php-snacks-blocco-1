@@ -9,6 +9,20 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 
 $messaggio ="";
 
+// name
+if(!empty($_GET["name"])){
+  $name = $_GET["name"];
+  if(strlen($name) > 3){
+    $messaggio = "Accesso riuscito";
+  }else {
+    $messaggio = "Accesso negato";
+  }
+}else{
+  $messaggio = "Il nome è piu corto di 3 caratteri";
+}
+// /name
+
+// email
 if(!empty($_GET["email"])){
   $email = $_GET["email"];
   if(strpos($email, ".") !== false && strpos($email, "@") !== false){
@@ -19,6 +33,8 @@ if(!empty($_GET["email"])){
 }else{
   $messaggio = "Ti sei dimenticato di passare la mail";
 }
+// /email
+
  ?>
 
 <!DOCTYPE html>
